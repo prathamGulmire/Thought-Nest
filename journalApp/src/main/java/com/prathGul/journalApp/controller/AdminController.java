@@ -12,13 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@CrossOrigin("*")
 public class AdminController {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/get-allUsers")
-    public ResponseEntity<?> getAllUsers() {
+    public ResponseEntity<List<User>> getAllUsers() {
         List<User> all = userService.getAll();
         if(all != null && !all.isEmpty()) {
             return new ResponseEntity<>(all, HttpStatus.OK);

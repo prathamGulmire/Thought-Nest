@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/journal")
+@CrossOrigin("*")
 public class JournalEntryControllerV2 {
 
     @Autowired
